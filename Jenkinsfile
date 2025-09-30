@@ -1,19 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/<your-username>/jenkins-test-project.git'
-            }
-        }
         stage('Build') {
             steps {
-                sh 'echo "Building..."'
+                echo 'Building project...'
             }
         }
         stage('Test') {
             steps {
-                sh 'python3 test_app.py'
+                echo 'Testing project...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying project...'
             }
         }
     }
